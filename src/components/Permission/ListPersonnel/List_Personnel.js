@@ -84,6 +84,7 @@ class List_Personnel extends React.Component {
 
     render() {
         const { personnels, refreshing, visibleModal, loading } = this.state;
+        console.log(personnels);
         return (
             <View style={{flex: 1}}>
                 {!loading ? (

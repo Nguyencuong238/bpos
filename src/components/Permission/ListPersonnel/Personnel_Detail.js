@@ -1,14 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { ScreenOrientation } from 'expo';
-import { Animated, ActivityIndicator, FlatList, StyleSheet, Text, View, Switch } from 'react-native';
+import { ActivityIndicator,  StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { isEmpty } from 'lodash';
 import { personnel_api } from '../../../services/api/fetch';
 import NumberFormat from 'react-number-format';
 import ModalSearch from './ModalSearch';
-import RNPickerSelect from 'react-native-picker-select';
 import { Ionicons } from "@expo/vector-icons";
+import Icon from 'react-native-vector-icons/Ionicons';
 
 class Personnel_Detail extends React.Component {
     constructor(props) {
@@ -39,6 +38,14 @@ class Personnel_Detail extends React.Component {
         });
     }
 
+    onDelete() {
+
+    }
+
+    onReset() {
+
+    }
+
     render() {
         const { personnel, refreshing, visibleModal, loading } = this.state;
         return (
@@ -59,7 +66,60 @@ class Personnel_Detail extends React.Component {
                             </View>
                         </View>
                         <View>
-                            <Text>addd</Text>
+                            <View>
+                                <View>
+                                    <Icon name='md-chatboxes' size={17} color='#000' />
+                                    <Text>Nhắn tin</Text>
+                                </View>
+                                <View>
+                                    <Icon name='ios-phone-portrait-outline' size={17} color='#000' />
+                                    <Text>Gọi điện</Text>
+                                </View>
+                                <View>
+                                    <Icon name='md-mail' size={17} color='#000' />
+                                    <Text>Email</Text>
+                                </View>
+                            </View>
+                            <View>
+                                <Text>Địa chỉ</Text>
+                            </View>
+                            <View>
+                                <Text>Ngày sinh</Text>
+                            </View>
+                        </View>
+                        <View>
+                            <View>
+                                <View>
+                                    <Icon name='md-nuclear' size={17} color='#000' />
+                                    <Text>Phân quyền nhân viên</Text>
+                                    <Icon name='ios-information-circle' size={17} color='#000' />
+                                </View>
+                            </View>
+                            <View>
+                                <Text>Nhóm quyền</Text>
+                                <Text>Quản trị cao cấp</Text>
+                            </View>
+                            <View>
+                                <Text>Chi nhánh làm việc</Text>
+                                <Text>Chi nhánh trung tâm</Text>
+                            </View>
+                        </View>
+                        <View>
+                            <Text>Trạng thái</Text>
+                            <View>
+                                <View style={{width: 2, height: 2, color: '#eee'}}/>
+                                <Text>Đang làm việc</Text>
+                            </View>
+                        </View>
+                        <View>
+                            <TouchableOpacity onPress={() => this.onDelete()}>
+                                <Text>Xóa nhân viên</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View>
+                            <TouchableOpacity onPress={() => this.onReset()}>
+                                <Text>Reset</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 ) : (
