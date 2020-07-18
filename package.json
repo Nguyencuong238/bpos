@@ -25,7 +25,7 @@
     "expo-web-browser": "^5.0.0",
     "immutable": "^4.0.0-rc.12",
     "locutus": "^2.0.11",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "please-update-dependencies": "^2.0.0",
     "qs": "^6.7.0",
